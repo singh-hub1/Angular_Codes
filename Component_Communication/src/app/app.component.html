@@ -1,0 +1,57 @@
+Implement parent to child communication for the following : 
+1. Display Factorial of a number. 
+2. To check whether a number is palindrome or not.
+3. To check whether a number is armstrong or not.
+4. To check whether a number is perfect or not.
+
+<app-child [dataFromParent]="sendDataToChild"></app-child>
+
+<app-child [factorial]="findFactorial(5)"></app-child> 
+<app-child [palindrome]="checkPalindrome(121)"></app-child> 
+<app-child [armstrong]="checkArmstrong(153)"></app-child>
+<app-child [perfectNo]="checkPerfectNumber(28)"></app-child> 
+
+
+<h1>Component Communication</h1>
+<h2>This is parent component</h2>
+<h3>Data received from child component is {{dataRecvd}}</h3>
+<app-child (dataFromChild)="parentRecv($event)"></app-child>
+
+<h3>Parent Component Q1 1</h3>
+Enter a text : <input type="text" #str [value] ="">
+<button (click)="displayTextToChild(str.value)">Display</button>
+<app-child [textFromParent]="displayTextToChild(str.value)" (textFromChild)="parentRec($event)"></app-child>
+<h3>Parent Component Q1 2</h3>
+<h3>The text is : {{text}}</h3>
+
+<h3>Parent To</h3>
+Enter 1st number : <input type="number" #num1 [value]><br><br>
+Enter 2nd number : <input type="number" #num2 [value]><br><br>
+<button (click)="displayAddnToChild(num1.value,num2.value)">Add</button>
+<h3>Parent </h3>
+<h3>Addition is : {{final_ans}}</h3>
+<app-child [addnFromParent]="displayAddnToChild(num1.value,num2.value)" (addnFromChild)="addn($event)"></app-child> 
+
+ <h3>Parent To</h3>
+Enter string : <input type="text" #msg [value]=""> <br><br>
+<button (click)="displayStringToChild(msg.value)">Convert To Uppercase</button>
+<h3>Parent</h3>
+<p>Reversed String : {{str}}</p>
+<app-child [new_upper]="displayStringToChild(msg.value)" (rev)="reverseString($event)"></app-child> 
+
+ <app-child1 [dataToParentFromChild]="sendDataToChild1"></app-child1> 
+
+<!-- Question : 4 -->
+ <h3>Parent Component</h3>
+<p>User clicked the button {{counter}} times</p>
+<app-child1 (c)="buttonClicked()"></app-child1>
+
+<!-- Implementation of template reference variable to directly access properties and methods from child component -->
+<br>{{child.myName}}<br>
+<button (click)="child.hello()">Hello Function</button>
+<app-child1 #child></app-child1> 
+
+<br>{{child.counter}}<br>
+<button (click)="child.incrCounter()">Click</button>
+<app-child1 #child></app-child1>
+

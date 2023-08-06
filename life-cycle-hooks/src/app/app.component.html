@@ -1,0 +1,15 @@
+<h1>Implementation of component life cycle hooks</h1>
+
+<input type="text" #inpText />&nbsp;
+<button (click)="sendDataChild(inpText)">Send data to child</button>
+<br />
+<br />
+
+<app-lifecyclehooks [childData]="parentData" *ngIf="destroyValue">
+   <h4>This is projected content {{parentData}}</h4>
+</app-lifecyclehooks>
+<button onclick="destroyFunc()">Destroy Function</button>
+
+
+
+<router-outlet></router-outlet>

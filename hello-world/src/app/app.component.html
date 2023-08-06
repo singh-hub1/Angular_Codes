@@ -1,0 +1,80 @@
+<h1>Vishal singh</h1>
+<p>
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut quod voluptas et
+  suscipit a ad, nihil repellendus delectus enim nesciunt dolores deserunt
+  cumque cupiditate architecto nam sit aspernatur labore. Eum.
+</p>
+<h2>Finally {{ title }}</h2>
+<h3>{{ data }}</h3>
+<h4>{{ getVal() }}</h4>
+
+<h5>{{ num + 100 }}</h5>
+
+<!-- Component is a building block -->
+<!-- app.component.specs.ts ->used for testing the code -->
+
+<!-- //install bootstrap and jquery -->
+<!-- npm install bootstrap -->
+<!-- npm install jquery -->
+<!-- and add with "node modules" -->
+<!-- how to make component -> ng generate component component_name -->
+
+<br /><br />
+<button (click)="alertName()">Click me</button>
+
+<br /><br />
+<button (click)="getNames('vishal', 'singh')">Click me</button>
+<br /><br />
+<button (click)="getData()">Call function</button>
+<br /><br />
+<hr>
+
+<h1>Event Concept</h1>
+ <input type="text" #box (keyup)="getData1(box.value)" placeholder="KeyUp event"/> 
+<br /><br />
+
+<input type="text" #box (keydown)="getData1(box.value)" placeholder="KeyUp event"/> 
+
+<br /><br />
+
+<input type="text" #box (blur)="getData2(box.value)" placeholder="blur"/> 
+
+
+<br><br>
+
+<input type="text" #box (input)="getData2(box.value)" placeholder="blur"/>
+
+<br><br>
+<h1 (mouseover)="getMouse('overr')">vishal</h1>
+
+
+<br><br>
+<h1 (mouseleave)="getMouse('leave')">vishal</h1> 
+
+<br><br><br>
+<!-- *********************************************************************************** -->
+<input
+  type="text"
+  #fetch
+  placeholder="name of the placeholder"
+  name="username"
+/>
+
+<button (click)="getValue(fetch.value)">Click</button>
+<p>Box value is :: {{ displayval }}</p>
+<!-- ***************************************************************************************** -->
+
+<button (click)="counter('minus')">--</button>
+<br />
+<br />
+<button (click)="counter('add')">++</button>
+<br />
+<br />
+<p>{{ count }}</p>
+
+<!-- PROPERTY BINDING  -->
+<!-- Iterpolation works only on numeric and string  -->
+<!-- Property Binding is works on numeric,string as well as boolean value also. -->
+
+
+

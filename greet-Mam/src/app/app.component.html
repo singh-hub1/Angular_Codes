@@ -1,0 +1,102 @@
+<h1>This is the First App</h1>
+<h2>{{greet}}</h2>
+{{msg}}
+<!-- --------------------------------------------------------------------------------------- -->
+<h2>.....Component Basics.....</h2>
+<h3>Interpolation with property</h3>
+<h4>{{myName}} everyone !! </h4>
+<br> 
+<!-- ----------------------------------------------------------------------------------------- -->
+<h3>Interpolation to perform mathematical operations</h3>
+<p>Addition : {{10+13}}</p>
+<p>Sum of two numbers : {{sum(1000,2000)}}</p>
+<!-- -------------------------------------------------------------------------------------------- -->
+<br>
+<h3>Interpolation of concatenate strings</h3>
+<p>{{"FYMCA -A class   "+ myName}}</p>
+<p>{{wish + myName}}</p>
+<p>{{wish}},{{myName}}</p>
+<!-- -------------------------------------------------------------------------- -->
+<br>
+<h3>Interpolation to use built in methods or properties</h3>
+<p>{{myName.length}}</p>
+<p>{{myName.toUpperCase()}}</p>
+<p>{{myName.toLowerCase()}}</p>
+<!-- ------------------------------------------------------------------------------------------ -->
+<h3>Interpolation with function</h3>
+<p>{{greetEveryone()}}</p>
+<!-- ---------------------------------------------------------------------------------------- -->
+<h3>Interpolation with objects</h3>
+<p>Student Roll no is displayed : {{student.rollNo}}</p>
+<p>Student Name is displayed : {{student.studName}}</p>
+<!-- --------------------------------------------------------------------------------- -->
+<br><br>
+<h3>Interpolation with array</h3>
+<p>{{programName}}</p>
+<p>{{programName.length}}</p>
+<p>{{programName[1]}}</p>
+
+<!-- -------------------------------------------------------------------------------- -->
+<br>
+<p>{{url}}</p>
+<!-- ---------------------------------------------------------------------------------- -->
+<h1>Property Binding</h1>
+<p [innerText]="myName"></p>
+<p [innerHTML]="flag"></p>
+<button disabled='{{flag}}'>Click the button</button>
+<br>
+<br>
+<button disabled="flag">Click the button</button>
+<br>
+<br>
+<button [disabled]="flag">Click the button</button>
+<!-- ----------------------------------------------------------------------------------- -->
+<h1>Class Binding</h1>
+<h5 class="text-purple">Implementing Class Binding</h5>
+<h5 [class]="purple">Implementing Class Binding</h5>
+<h5 class="text-font" [class]="purple">Implementing Class Binding</h5>
+<h5 [class.text-red]="iserror">Implementing Class Binding</h5>
+<h5 [style.color]="'brown'">Implementing Style Binding</h5>
+<h5 [style.color]="iserror? 'red' :'green'">Implementing Style Binding</h5>
+<h5 [style.color]="changecolor">Implementing Style Binding</h5>
+
+<!-- -------------------------------------------------------------------------------------------------- -->
+<h1>Image Display</h1>
+<img [src]="imgURL" class="margin">
+<br><br>
+<!-- --------------------------------------------------------------------------------------------------- -->
+<!-- Event Binding -->
+<h1>Event Binding</h1>
+<button (click)="display()">Click Event</button>
+<br><br>
+<button (dblclick)="dblClickEvent()">Double click event</button><br>
+<br><br>
+<input type="text" (blur)="blurEvent()" value="Blur event"><br>
+<br><br>
+<button (click)="eventHandle('This event is handled using $event')">Event is handled by dollar event,only string</button><br>
+<br><br>
+<button (click)="eventHandle(50)">Event is handled by dollar event,numeric value pass</button><br>
+<br><br>
+<button (click)="eventHandle($event)">Event is handled by dollar event,$event</button><br>
+<br>
+<br>
+<!-- ------------------------------------------------------------------------------------------------------------ -->
+<h3>Template reference variable  EXAMPLE-1 the text from the input is displayed</h3>
+<input #inputtext (input)="inputevent1(inputtext)">
+<p>The entered value is {{str}}</p>
+<br>
+<!-- ------------------------------------------------------------------------------------------------------ -->
+<h3>Template reference variable EXAMPLE-2 the text from the input is displayed in the console when the button is clicked</h3>
+<input #refvar type="text">
+<button (click)="displayconsole(refvar.value)">Display data from text box</button>
+<br><br>
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+<h3>Template reference variable EXAMPLE-3 the text from the input is displayed in the console when the button is clicked</h3>
+<input #ref type="text" (keyup)="eventHandle1(ref.value)">
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+
+
+
+
+
+

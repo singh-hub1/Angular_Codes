@@ -1,0 +1,21 @@
+.classOne{
+   color: aquamarine;
+}
+
+.classTwo{
+   color:beige;
+}
+
+.box{
+   width:100px;
+   height:125px;
+   background: greenyellow;
+}
+
+.border{
+   border: 2px solid black;
+}
+
+.circle{
+   border-radius: 50px;
+}

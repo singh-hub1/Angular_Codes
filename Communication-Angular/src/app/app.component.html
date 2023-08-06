@@ -1,0 +1,6 @@
+<h1>{{title}}</h1>
+<app-child-component [item]='data'></app-child-component>
+
+<app-child-component (UpdateDataEvent)="UpdateData($event)"></app-child-component>
+<h4>{{value}}</h4>
+

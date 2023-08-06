@@ -1,0 +1,18 @@
+<h1>Vishal's Calculator</h1>
+
+<h3>CALCULATOR</h3>
+
+Enter 1st value : <input #num1 type="number"> <br><br>
+Enter 2nd value : <input #num2 type="number"> <br><br>
+
+<button (click)="output=add(num1.value,num2.value)" id="arithmetic">+</button>
+
+<button (click)="output=subtract(num1.value,num2.value)" id="arithmetic">-</button>
+
+<button (click)="output=multiply(num1.value,num2.value)" id="arithmetic">x</button>
+
+<button (click)="output=divide(num1.value,num2.value)" id="arithmetic">/</button>
+
+<button (click)="output=mod(num1.value,num2.value)" id="arithmetic">%</button>
+
+<p>{{output}}</p>

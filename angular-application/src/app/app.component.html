@@ -1,0 +1,33 @@
+<h1>Angular Application</h1>
+
+<h2>{{title}}</h2>
+
+<h4>{{getData()}}</h4>
+
+<h4>{{getData1()}}</h4>
+
+<!-- ----------------------------------------------------------------------------------------- -->
+<h4>Name : {{obj.name}}</h4>
+<h4>Age : {{obj.age}}</h4>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+<h4>{{currentURL}}</h4>
+<!-- ------------------------------------------------------------------------- -->
+<button (click)="GetYTChannel()">Click me</button><br><br>
+
+<button (click)="GetValue()">Get Value</button><br><br>
+
+<button (click)="getValueByParam('Welcome to App')">Get Value Parameter</button>
+
+<!-- ANGULAR PROPERTY BINDING -->
+
+
+Name : <input type="text" (keyup)="GetValue1($any($event.target).value)">
+<h5>{{strName}}</h5>
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
+Value 1 : <input type="number" #num1 [value] > <br>
+Value 2 : <input type="number" #num2 [value] > <br>
+<button (click)="calc(num1.value,num2.value)">ADD</button>
+<h5>Addition is : {{sum}}</h5>
+<!-- ------------------------------------------------------------------------------------------------------------------ -->

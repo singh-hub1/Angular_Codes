@@ -1,0 +1,166 @@
+<!-- implementing directive s -->
+<div>
+   <h1>Structural Directives</h1>
+   <h2>ngFor directive</h2>
+   <ul *ngFor="let cname of courseNames">
+     <li>{{ cname }}</li>
+   </ul>
+ </div>
+ 
+ <br /><br /><br />
+ <br /><br /><br />
+ 
+  <div>
+   <h2>ngFor directive with their index</h2>
+   <ul *ngFor="let cname of courseNames; index as i">
+     <li>{{ i }} {{ cname }}</li>
+   </ul>
+ </div>
+ 
+ <br /><br />
+ <div>
+   <h2>ngFor directive with first --index whether it is first element or not</h2>
+   <ul *ngFor="let cname of courseNames; first as f">
+     <li>{{ f }} {{ cname }}</li>
+   </ul>
+ </div>
+ 
+ <br /><br />
+ 
+ <div>
+   <h2>ngFor directive with last --index whether it is last element or not</h2>
+   <ul *ngFor="let cname of courseNames; last as l">
+     <li>{{ l }} {{ cname }}</li>
+   </ul>
+ </div>
+ 
+ <div>
+   <h2>ngFor directive with displays only odd index values</h2>
+   <ul *ngFor="let cname of courseNames; odd as o">
+     <li>{{ o }} {{ cname }}</li>
+   </ul>
+ </div>
+ 
+ <div>
+   <h2>ngFor directive with displays only even index values</h2>
+   <ul *ngFor="let cname of courseNames; even as e">
+     <li>{{ e }} {{ cname }}</li>
+   </ul>
+ </div>
+ <!-- ====================================================================================================================================== -->
+ <br /><br /><br />
+ <h2>switch directive</h2>
+ <div [ngSwitch]="num_in_words">
+   <h4 *ngSwitchCase="'One'">the number one is displayed</h4>
+   <h4 *ngSwitchCase="'Two'">the number two is displayed</h4>
+   <h4 *ngSwitchCase="'Three'">the number three is displayed</h4>
+   <h4 *ngSwitchCase="'Four'">the number four is displayed</h4>
+   <h4 *ngSwitchCase="'Five'">the number five is displayed</h4>
+   <h4 *ngSwitchDefault>the number one is not assigned</h4>
+ </div>
+ <br /><br />
+  <!-- ====================================================================================================================================== -->
+
+ <div>
+   <h4 *ngIf="true">Good afternoon</h4>
+   <h4 *ngIf="greet">Vishal singh</h4>
+    <!-- ====================================================================================================================================== -->
+
+ 
+   <h1>Ng template example</h1>
+   <ng-template>
+     <p>the hello world</p>
+   </ng-template>
+  <!-- ====================================================================================================================================== -->
+
+   <h2>ngif directive with else block</h2>
+   <h4 *ngIf="greet; else elseBlock">good afternoon!!</h4>
+   <ng-template #elseBlock>
+     <h4>good morning!!</h4>
+   </ng-template>
+  <!-- ====================================================================================================================================== -->
+
+   <h2>ngif directive with else block</h2>
+   <h4 *ngIf="greet; then ifBlock; else elseBlock">good afternoon!!</h4>
+   <ng-template #ifBlock>
+     <h4>good night</h4>
+   </ng-template>
+    <!-- ====================================================================================================================================== -->
+
+ 
+    <!-- using structural directive displays ur happy or sad with help of images on the click of the button  -->
+   <br /><br /><br /><br />
+   <div>
+     <p>
+       Today I'm
+       <span>😀</span>
+       <span>🙁</span>
+     </p>
+ 
+     <button (click)="happy = !happy">
+       Set to
+       <span>Happy</span>
+       <span>Sad</span>
+     </button>
+   </div>
+ </div>
+ 
+ <br /><br /><br />
+ <div>
+
+    <!-- ====================================================================================================================================== -->
+
+   <h1>Attribute Directive</h1>
+   <h4 [ngStyle]="{ color: 'orange' }">hello there I'm vishal singh</h4>
+ 
+   <h4 [ngStyle]="{ 'font-style': style, 'font-size': fsize }">
+     hello there I'm arya singh
+   </h4>
+ </div>
+  <!-- ====================================================================================================================================== -->
+
+ <br /><br /><br />
+ <div [ngStyle]="addStyles">Displays different styles</div>
+ 
+ <button (click)="addStylesFunc()">button is clicked1</button>
+  <!-- ====================================================================================================================================== -->
+
+ <br /><br /><br />
+ <p>ngstyle directive example</p>
+ <ul *ngFor="let i of StudentDlts">
+   <div [ngStyle]="{ color: i.Rollno > 2 ? 'red' : 'green' }">
+     Displays different styles
+   </div>
+ </ul>
+ 
+ <br /><br /><br />
+ <h2>ngClass directive</h2>
+ <h4 [ngClass]="{ classOne: classone, classTwo: classtwo }">
+   ngClass Directive is implemented
+ </h4>
+ <br />
+  <!-- ====================================================================================================================================== -->
+
+ <button (click)="displayClass()">Display the class Directive</button>
+ <h1>ToolTip in Angular</h1>
+ <br /><br />
+ <div [ngClass]="addClasses"></div>
+ <br />
+ <button (click)="circleShape()">Change to circle</button>
+ 
+ <br /><br /><br />
+ <hr />
+   <!-- ====================================================================================================================================== -->
+
+ <div appCustomeDirective>
+   <p>hello vishal welcome to custome directive 
+
+ </div>
+
+ <br><br><br>
+ <!-- <input [(ngModel)]="inputedText"> 
+ <br>
+ {{inputedText}} -->
+
+ <br><br><br>
+ <hr><hr>

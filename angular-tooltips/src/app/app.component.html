@@ -1,0 +1,83 @@
+<button mat-raised-button
+        matTooltip="Tooltips in Angular">
+  Tooltip
+</button>
+
+<button mat-raised-button
+        matTooltip="Tooltip above the element"
+        matTooltipPosition="after">
+  Tooltip
+</button>
+
+<button mat-raised-button
+        matTooltip="Tooltip below the element"
+        matTooltipPosition="below">
+  Tooltip
+</button>
+
+<button mat-raised-button
+        matTooltip="Tooltip on the left side of  the element"
+        matTooltipPosition="left">
+  Tooltip
+</button>
+
+<button mat-raised-button
+        matTooltip="Tooltip on the right side of  the element"
+        matTooltipPosition="right">
+  Tooltip
+</button>
+
+<button mat-raised-button
+        matTooltip="Tooltip before the element"
+        matTooltipPosition="before">
+  Tooltip
+</button>
+
+<button mat-raised-button
+        matTooltip="Tooltip on the right side of  the element"
+        matTooltipPosition="after">
+  Tooltip
+</button>
+
+<button mat-raised-button
+        matTooltip="Disable tooltip"
+        matTooltipDisabled="true">
+Disable tooltip
+</button>
+
+<button mat-raised-button
+        matTooltip="Disable tooltip"
+        [matTooltipDisabled]="isDisabled">
+Disable tooltip
+</button>
+
+<!--Input to add a delay between hovering over 
+the element and displaying the tooltip-->
+<mat-form-field>
+   <input matInput placeholder="Show delay in milliseconds)"
+          type="number"
+          [formControl]="showDelay">
+ </mat-form-field>
+ 
+ <!--Input to add a delay between hovering away 
+ from the element and hiding the tooltip-->
+ 
+ <mat-form-field>
+   <input matInput placeholder="Hide delay in milliseconds"
+          type="number"
+          [formControl]="hideDelay">
+ </mat-form-field>
+ 
+ <!--Element that displays a tooltip 
+ with a custom delay in showing and hiding-->
+ <button mat-raised-button
+         matTooltip="Info about the action"
+         [matTooltipShowDelay]="showDelay.value"
+         [matTooltipHideDelay]="hideDelay.value">
+   Action
+ </button>
+ <button mat-raised-button
+        matTooltip="Adding a class to the tooltip container"
+        matTooltipClass="custom-tooltip">
+  Custom tooltip
+</button>

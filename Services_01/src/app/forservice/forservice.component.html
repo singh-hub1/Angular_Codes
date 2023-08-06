@@ -1,0 +1,17 @@
+<h2>This component is used to show demo of Service</h2>
+<table class="table table-bordered">
+    <tr class="bg-primary">
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee City</th>
+        <th>Employee Salary</th>
+        <th>Employee DoB</th>
+    </tr>
+    <tr *ngFor="let e of emp">
+        <td>{{e.eid}}</td>
+        <td>{{e.ename}}</td>
+        <td>{{e.ecity}}</td>
+        <td>{{e.esalary}}</td>
+        <td>{{e.dob}}</td>
+    </tr>
+</table>

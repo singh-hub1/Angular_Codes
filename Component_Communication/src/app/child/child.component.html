@@ -1,0 +1,46 @@
+ <h3>{{dataFromParent}}</h3> 
+ <h3>Factorial of a number is : {{factorial}}</h3> 
+ <h3>{{palindrome}}</h3> 
+ <h3>{{armstrong}}</h3>
+<h3>{{perfectNo}}</h3> 
+
+ <button (click)="sendDataToParent()">sendDataToParent</button> 
+
+
+<!-- Question : 
+1. On the webpage display parent to child communication i.e when the parent types some text in the textbox it is displayed or sent to the child component. Create a child component, when the user types in some text and clicks on the button the data is sent or displayed on the parent component. Use CSS wherever required.
+-->
+
+<h3>Child Component Q1 1.</h3>
+<h3>Text is : {{textFromParent}}</h3>
+<hr>
+<h3>Child Component Q1 2.</h3>
+Enter a text : <input type="text" #str [value]="">
+<button (click)="displayTextToParent(str.value)">Display</button>
+
+
+<!-- 2. Create a parent component and a child component on the parent component take two numbers from the input box and add these numbers and display the result on the child component. In the child component input some number, add this number to the total or result passed by the parent component and display the result on the parent component. Use CSS wherever required. -->
+    
+ <hr>
+<h3>Child </h3>
+<h3>Addition is : {{addnFromParent}}</h3>
+<h3>Child To</h3>
+Enter 3rd number : <input type="number" #nums [value]> <br><br>
+<button (click)="displayAddnToParent(nums.value)">Add third number</button> 
+
+<!-- 3. Create a parent component and a child component. On the parent component create a button and input a string when the user clicks on this button the text is converted to uppercase display this uppercase text on the child component. Create a button, input a string on the child component when the user clicks this button string is reversed and displayed on the parent component. Use CSS wherever required. -->
+
+ <hr>
+<h3>Child</h3>
+<p>{{new_upper.toUpperCase()}}</p>
+<h3>Child To</h3>
+Enter a string : <input type="text" #message [value]> <br><br>
+<button (click)="displayStringToParent(message.value)">Reverse string</button> 
+<button (click)="parent to child (message.value)">data is received</button>
+
+<li>
+   <ul>Data structures</ul>
+   
+</li>
+
+

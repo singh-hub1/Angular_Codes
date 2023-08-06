@@ -1,0 +1,219 @@
+<h1>Implementation of Template Drive</h1>
+<!--
+<h5> Working flow of only ngModel and name attribute</h5>
+
+   <form class="row g-3" #schoolform="ngForm">
+  <div>
+    {{ schoolform.value | json }}
+    <br />
+    <hr />
+  </div>
+
+  <br><br>
+
+  <div ngModelGroup="address"> 
+
+    <div class="form-group">
+      <label>City</label>
+      <input type="text" name="City" ngModel />
+    </div>
+
+    <br><br>
+    <div class="form-group">
+      <label>State</label>
+      <input type="text" name="State" ngModel />
+    </div>
+
+  </div>
+
+  <div class="col-md-2">
+    <label >Name</label><br />
+    <input
+      type="text"
+      name="StudName"
+      ngModel
+    />
+  </div>
+
+  <br /><br />
+
+  <div class="col-md-2">
+    <label>Phone Number</label><br />
+    <input
+      type="number"
+      name="StudNumber"
+      ngModel
+    />
+  </div>
+
+  <br /><br />
+
+  <div class="col-md-2">
+    <label >Email id</label>
+    <input
+      type="email"
+      name="StudMailId"
+      ngModel
+    />
+  </div>
+
+  <br /><br />
+
+  <div class="col-md-2">
+    <label>Select School Names::</label
+    ><br />
+    <select
+      name="schoolNames"
+      ngModel
+    >
+      <option selected>select school names</option>
+      <option >computer Science</option>
+      <option >mathematics</option>
+      <option >statistics</option>
+    </select>
+  </div>
+
+<div class="form-check">
+    <label name="ProgramNames" ngModel>Program Names ::</label> <br />
+   
+    <input
+      type="radio"
+      name="p_names"
+   />Msc Cs
+
+    <input
+      type="radio"
+      name="p_names"
+      />MCA Science
+
+</div>
+
+  
+
+  <div class="form-check">
+    <label>Brochure</label><br />
+    <input
+      
+      type="checkbox"
+     
+      name="BrochureStatus"
+      ngModel
+    />
+    I want Brochure
+  </div>
+
+  <div>
+    <button class="btn btn-primary" type="submit">Submit the details</button>
+  </div>
+</form> 
+
+
+
+
+
+
+
+
+-->
+ 
+ 
+
+
+
+<br><br>
+<hr>
+<hr>
+<hr>
+
+
+<h5> Working flow of (ngModel) and userdefined passing the value</h5>
+<form class="row g-3" #schoolform="ngForm">
+   <div>
+      {{ schoolform.value | json }}
+
+      <br>
+
+      <h4>This is user bound data stored in a class
+         {{userdata | json}}
+      </h4>
+
+      <hr />
+      <br>
+   </div>
+
+   <div ngModelGroup="address">
+      <div>
+         <label>City</label>
+         <input type="text" class="form-control" name="city" [(ngModel)]="userdata.City" />
+      </div>
+
+      <div class="form-group">
+         <label for="">State</label>
+         <input type="text" class="form-control" name="state" [(ngModel)]="userdata.State" />
+      </div>
+
+   </div>
+
+   <div class="col-md-2">
+      <label>Name</label><br />
+      <input type="text" class="form-control" name="studname" [(ngModel)]="userdata.Name" #refername="ngModel" required>
+
+      <div [hidden]="refername.valid || refername.pristine" class="alert alert-danger">
+         Name is required
+      </div>
+      <br>
+      <br>
+      {{refername.untouched}}
+      {{refername.pristine}}
+      <!-- {{refername.className}}  -->
+   </div>
+
+   <br /><br />
+
+   <div class="col-md-2">
+      <label>Phone Number</label><br />
+      <input type="number" class="form-control" name="studnumber" [(ngModel)]="userdata.PhoneNumber" />
+   </div>
+
+   <br /><br />
+
+   <div class="col-md-2">
+      <label>Email id</label>
+      <input type="email" class="form-control" name="studmail" [(ngModel)]="userdata.MailId" />
+   </div>
+
+   <br /><br />
+
+   <div class="col-md-2">
+      <label>Select School Names::</label><br />
+      <select class="form-select" name="schoolNames" [(ngModel)]="userdata.SchoolNames">
+         <option selected>select school names</option>
+         <option>computer Science</option>
+         <option>mathematics</option>
+         <option>statistics</option>
+      </select>
+   </div>
+
+   <div class="form-check">
+      <label name="ProgramNames" [(ngModel)]="userdata.ProgramNames">Program Names ::</label><br />
+
+      <input type="radio" name="p_names"  />Msc cs
+      <br>
+      <input type="radio" name="p_names" />MCA Science
+   </div>
+
+
+   <br><br>
+
+
+
+   <div class="form-check">
+      <label>Brochure</label><br />
+      <input class="form-check-input" type="checkbox" name="BrochureDefault" [(ngModel)]="userdata.Brochure" />
+      I want Brochure
+   </div>
+
+   <div>
+      <button class="btn btn-primary" type="submit">Submit the details</button>
+   </div>
+</form> 

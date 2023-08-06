@@ -1,0 +1,48 @@
+h1{
+  background-color: darkgray;
+  font-family:cursive;
+}
+
+h5{
+  background-color: mediumspringgreen;
+  text-align: center;
+  text-decoration: wavy;
+}
+
+h1{
+  background-color: chartreuse;
+  text-align: center;
+}
+
+h2{
+  background-color: blue;
+  text-align: center;
+}
+
+h3{
+  background-color: darksalmon;
+  text-align: center;
+}
+
+.text-purple{
+  color : purple;
+}
+
+.text-font{
+  font-family: 'Lucida Sans';
+  font-size: large;
+  font-style: italic;
+}
+
+.text-red{
+  color : red;
+  font-size: large;
+  font-style: italic;
+}
+
+.margin{
+  height:250px;
+  width: 250px;
+  border-radius: 4px;
+}
+
